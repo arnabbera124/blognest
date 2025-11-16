@@ -96,6 +96,25 @@ const API_BASE = 'https://blognest-fvpz.onrender.com';
       function setAuth(obj) { saveJSON(AUTH_KEY, obj); }
       function clearAuth() { localStorage.removeItem(AUTH_KEY); }
 
+      // Auth helpers - add to script.js
+function setToken(token) { localStorage.setItem('bn_token', token); }
+function getToken() { return localStorage.getItem('bn_token'); }
+function clearToken() { localStorage.removeItem('bn_token'); }
+
+// Update setAuth to also save token (if you get token from server)
+function setAuthAndToken(user, token) {
+  localStorage.setItem(AUTH_KEY, JSON.stringify(user));
+  setToken(token);
+}
+
+// Keep existing clearAuth but also clear token
+function clearAuth() {
+  localStorage.removeItem(AUTH_KEY);
+  clearToken();
+}
+
+
+
       // ---------- Seed demo data ----------
       (function seedIfEmpty() {
         if (!loadUsers().length) {
