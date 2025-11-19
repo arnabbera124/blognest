@@ -1,4 +1,4 @@
-const API_BASE = 'https://blognest-fvpz.onrender.com';
+const API_BASE = 'https://blognest-1-whkp.onrender.com';
     // script.js - client-side logic for BlogNest (localStorage-based, no backend required)
     (function () {
       // ---------- Constants & localStorage keys ----------
